@@ -1,0 +1,3 @@
+defaultBaseImage: ubuntu
+baseImageOverrides: 
+  github.com/http-helloworld/cmd/helloworld: centos
