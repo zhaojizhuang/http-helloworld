@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world
+spec:
+  selector:
+    matchLabels:
+      foo: bar
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        foo: bar
+    spec:
+      containers:
+      - name: hello-world
+        # This is the import path for the Go binary to build and run.
+        image: ko://github.com/http-helloworld/cmd/helloworld
+        ports:
+        - containerPort: 8080
